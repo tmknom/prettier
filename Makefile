@@ -32,10 +32,17 @@ lint-dockerfile:
 lint-shellscript:
 	docker run --rm -v "$(CURDIR):/mnt" koalaman/shellcheck hooks/build
 
-format: format-shellscript ## Format
+format: format-shellscript format-markdown format-json ## Format
 
 format-shellscript:
 	docker run --rm -v "$(CURDIR):/work" -w /work jamesmstone/shfmt -i 2 -ci -kp -w hooks/build
+
+format-markdown:
+	docker run --rm -v "$(CURDIR):/work" tmknom/prettier --parser=markdown --write '**/*.md'
+
+format-json:
+	docker run --rm -v "$(CURDIR):/work" tmknom/prettier --parser=json --write '**/*.json'
+
 
 # https://postd.cc/auto-documented-makefile/
 help: ## Show help
