@@ -7,7 +7,9 @@
 [![MicroBadger Layers](https://img.shields.io/microbadger/layers/tmknom/prettier.svg)](https://microbadger.com/images/tmknom/prettier)
 [![License](https://img.shields.io/github/license/tmknom/prettier.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Dockerfile template.
+An opinionated code formatter based on Docker.
+
+This is [prettier](https://github.com/prettier/prettier) wrapper.
 
 ## Requirements
 
@@ -15,15 +17,29 @@ Dockerfile template.
 
 ## Usage
 
-```sh
-curl -fsSL https://raw.githubusercontent.com/tmknom/prettier/master/install | sh -s example
-cd example
+### Format markdown
+
+```shell
+docker run --rm -v "$PWD:/work" tmknom/prettier --parser=markdown --write '**/*.md'
+```
+
+### Format json
+
+```shell
+docker run --rm -v "$PWD:/work" tmknom/prettier --parser=json --write '**/*.json'
+```
+
+### Help
+
+```shell
+docker run --rm tmknom/prettier
 ```
 
 ## Makefile targets
 
 ```text
 build                          Build docker image
+format                         Format
 help                           Show help
 install                        Install requirements
 lint                           Lint
@@ -42,19 +58,6 @@ make install
 ### Deployment
 
 Automatically deployed by "[DockerHub Automated Build](https://docs.docker.com/docker-hub/builds/)" after merge.
-
-## Continuous Deployment
-
-### Prepare
-
-1. Create repository on GitHub
-   - <https://help.github.com/articles/create-a-repo/>
-2. Setting up your build on CircleCI
-   - <https://circleci.com/docs/2.0/getting-started/#setting-up-your-build-on-circleci>
-3. Configure automated builds on Docker Hub
-   - <https://docs.docker.com/docker-hub/builds/#create-an-automated-build>
-4. Configure webhook on MicroBadger
-   - <https://medium.com/microscaling-systems/microbadger-keep-your-metadata-fresh-with-a-webhook-651ee26cd4a6>
 
 ### Deployment Pipeline
 
