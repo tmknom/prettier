@@ -40,6 +40,9 @@ format-shellscript:
 format-markdown:
 	docker run --rm -v "$(CURDIR):/work" tmknom/prettier --parser=markdown --write '**/*.md'
 
+format-json:
+	docker run --rm -v "$(CURDIR):/work" tmknom/prettier --parser=json --write '**/*.json'
+
 
 # https://postd.cc/auto-documented-makefile/
 help: ## Show help
