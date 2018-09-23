@@ -31,13 +31,11 @@ lint-dockerfile:
 
 lint-shellscript:
 	docker run --rm -v "$(CURDIR):/mnt" koalaman/shellcheck hooks/build
-	docker run --rm -v "$(CURDIR):/mnt" koalaman/shellcheck install
 
 format: format-shellscript ## Format
 
 format-shellscript:
 	docker run --rm -v "$(CURDIR):/work" -w /work jamesmstone/shfmt -i 2 -ci -kp -w hooks/build
-	docker run --rm -v "$(CURDIR):/work" -w /work jamesmstone/shfmt -i 2 -ci -kp -w install
 
 # https://postd.cc/auto-documented-makefile/
 help: ## Show help
