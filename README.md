@@ -1,6 +1,11 @@
 # prettier
 
-[![CircleCI](https://circleci.com/gh/tmknom/prettier.svg?style=svg)](https://circleci.com/gh/tmknom/prettier)
+[![Dockerfile Actions Status](https://github.com/tmknom/prettier/workflows/Dockerfile/badge.svg)](https://github.com/tmknom/prettier/actions?query=workflow%3ADockerfile)
+[![Shell Script Actions Status](https://github.com/tmknom/prettier/workflows/Shell%20Script/badge.svg)](https://github.com/tmknom/prettier/actions?query=workflow%3A%22Shell+Script%22)
+[![Markdown Actions Status](https://github.com/tmknom/prettier/workflows/Markdown/badge.svg)](https://github.com/tmknom/prettier/actions?query=workflow%3AMarkdown)
+[![YAML Actions Status](https://github.com/tmknom/prettier/workflows/YAML/badge.svg)](https://github.com/tmknom/prettier/actions?query=workflow%3AYAML)
+[![JSON Actions Status](https://github.com/tmknom/prettier/workflows/JSON/badge.svg)](https://github.com/tmknom/prettier/actions?query=workflow%3AJSON)
+
 [![Docker Build Status](https://img.shields.io/docker/build/tmknom/prettier.svg)](https://hub.docker.com/r/tmknom/prettier/builds/)
 [![Docker Automated build](https://img.shields.io/docker/automated/tmknom/prettier.svg)](https://hub.docker.com/r/tmknom/prettier/)
 [![MicroBadger Size](https://img.shields.io/microbadger/image-size/tmknom/prettier.svg)](https://microbadger.com/images/tmknom/prettier)
