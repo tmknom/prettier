@@ -1,4 +1,4 @@
-FROM alpine:3.9.3
+FROM alpine:3.11.6
 
 # Build-time metadata as defined at http://label-schema.org
 ARG BUILD_DATE
@@ -16,7 +16,7 @@ LABEL org.label-schema.vendor="tmknom" \
       org.label-schema.docker.cmd="docker run --rm -v \$PWD:/work $REPO_NAME --parser=markdown --write '**/*.md'" \
       org.label-schema.schema-version="1.0"
 
-ARG NODEJS_VERSION=10.14.2-r0
+ARG NODEJS_VERSION=12.15.0-r1
 ARG MODULE_VERSION=1.17.1
 
 RUN set -x && \
