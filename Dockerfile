@@ -17,11 +17,11 @@ LABEL org.label-schema.vendor="tmknom" \
       org.label-schema.schema-version="1.0"
 
 ARG NODEJS_VERSION=12.15.0-r1
-ARG MODULE_VERSION=1.18.2
+ARG PRETTIER_VERSION
 
 RUN set -x && \
     apk add --no-cache nodejs=${NODEJS_VERSION} nodejs-npm=${NODEJS_VERSION} && \
-    npm install -g prettier@${MODULE_VERSION} && \
+    npm install -g prettier@${PRETTIER_VERSION} && \
     npm cache clean --force && \
     apk del nodejs-npm
 

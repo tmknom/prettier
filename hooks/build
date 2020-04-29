@@ -4,12 +4,14 @@
 
 set -x
 
+PRETTIER_VERSION=$(cat VERSION)
 BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 VCS_REF=$(git rev-parse --short HEAD)
 VERSION=${DOCKER_TAG}
 REPO_NAME=$(echo "${DOCKER_REPO}" | cut -d / -f 2,3)
 
 docker build \
+  --build-arg PRETTIER_VERSION="${PRETTIER_VERSION}" \
   --build-arg BUILD_DATE="${BUILD_DATE}" \
   --build-arg VCS_REF="${VCS_REF}" \
   --build-arg VERSION="${VERSION}" \
