@@ -63,8 +63,8 @@ Automatically deployed by "[DockerHub Automated Build](https://docs.docker.com/d
 
 1. GitHub - Version Control System
    - <https://github.com/tmknom/prettier>
-2. CircleCI - Continuous Integration
-   - <https://circleci.com/gh/tmknom/prettier>
+2. GitHub Actions - Continuous Integration
+   - <https://github.com/tmknom/prettier/actions>
 3. Docker Hub - Docker Registry
    - <https://hub.docker.com/r/tmknom/prettier/>
 4. MicroBadger - Docker Inspection
