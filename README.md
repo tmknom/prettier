@@ -1,6 +1,11 @@
 # prettier
 
-[![CircleCI](https://circleci.com/gh/tmknom/prettier.svg?style=svg)](https://circleci.com/gh/tmknom/prettier)
+[![Dockerfile Actions Status](https://github.com/tmknom/prettier/workflows/Dockerfile/badge.svg)](https://github.com/tmknom/prettier/actions?query=workflow%3ADockerfile)
+[![Shell Script Actions Status](https://github.com/tmknom/prettier/workflows/Shell%20Script/badge.svg)](https://github.com/tmknom/prettier/actions?query=workflow%3A%22Shell+Script%22)
+[![Markdown Actions Status](https://github.com/tmknom/prettier/workflows/Markdown/badge.svg)](https://github.com/tmknom/prettier/actions?query=workflow%3AMarkdown)
+[![YAML Actions Status](https://github.com/tmknom/prettier/workflows/YAML/badge.svg)](https://github.com/tmknom/prettier/actions?query=workflow%3AYAML)
+[![JSON Actions Status](https://github.com/tmknom/prettier/workflows/JSON/badge.svg)](https://github.com/tmknom/prettier/actions?query=workflow%3AJSON)
+
 [![Docker Build Status](https://img.shields.io/docker/build/tmknom/prettier.svg)](https://hub.docker.com/r/tmknom/prettier/builds/)
 [![Docker Automated build](https://img.shields.io/docker/automated/tmknom/prettier.svg)](https://hub.docker.com/r/tmknom/prettier/)
 [![MicroBadger Size](https://img.shields.io/microbadger/image-size/tmknom/prettier.svg)](https://microbadger.com/images/tmknom/prettier)
@@ -39,10 +44,11 @@ docker run --rm tmknom/prettier
 
 ```text
 build                          Build docker image
-format                         Format
+format                         Format code
 help                           Show help
 install                        Install requirements
-lint                           Lint
+lint                           Lint code
+release                        Release
 ```
 
 ## Development
@@ -57,14 +63,16 @@ make install
 
 ### Deployment
 
-Automatically deployed by "[DockerHub Automated Build](https://docs.docker.com/docker-hub/builds/)" after merge.
+1. Bump [VERSION](https://raw.githubusercontent.com/tmknom/prettier/master/VERSION) file.
+2. Run `make release`.
+3. Automatically deployed by "[Docker Hub Automated Build](https://docs.docker.com/docker-hub/builds/)".
 
 ### Deployment Pipeline
 
 1. GitHub - Version Control System
    - <https://github.com/tmknom/prettier>
-2. CircleCI - Continuous Integration
-   - <https://circleci.com/gh/tmknom/prettier>
+2. GitHub Actions - Continuous Integration
+   - <https://github.com/tmknom/prettier/actions>
 3. Docker Hub - Docker Registry
    - <https://hub.docker.com/r/tmknom/prettier/>
 4. MicroBadger - Docker Inspection
