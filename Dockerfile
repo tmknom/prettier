@@ -23,9 +23,8 @@ ARG PRETTIER_VERSION
 RUN set -x && \
     apk add --no-cache nodejs=${NODEJS_VERSION} npm=${NPM_VERSION} && \
     npm install -g prettier@${PRETTIER_VERSION} && \
-    npm cache clean --force && \
-    apk del npm
+    npm cache clean --force
 
 WORKDIR /work
-ENTRYPOINT ["/usr/bin/prettier"]
+ENTRYPOINT ["/usr/bin/npx", "prettier"]
 CMD ["--help"]
