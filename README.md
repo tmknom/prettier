@@ -1,3 +1,7 @@
+**Moved: [tmknom/dockerfiles](https://github.com/tmknom/dockerfiles/tree/main/prettier)**
+
+---
+
 # prettier
 
 [![Dockerfile Actions Status](https://github.com/tmknom/prettier/workflows/Dockerfile/badge.svg)](https://github.com/tmknom/prettier/actions?query=workflow%3ADockerfile)
