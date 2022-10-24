@@ -1,4 +1,4 @@
-FROM alpine:3.11.6
+FROM alpine:3.15
 
 # Build-time metadata as defined at http://label-schema.org
 ARG BUILD_DATE
@@ -16,15 +16,15 @@ LABEL org.label-schema.vendor="tmknom" \
       org.label-schema.docker.cmd="docker run --rm -v \$PWD:/work $REPO_NAME --parser=markdown --write '**/*.md'" \
       org.label-schema.schema-version="1.0"
 
-ARG NODEJS_VERSION=12.15.0-r1
+ARG NODEJS_VERSION=16.13.1-r0
+ARG NPM_VERSION=8.1.3-r0
 ARG PRETTIER_VERSION
 
 RUN set -x && \
-    apk add --no-cache nodejs=${NODEJS_VERSION} nodejs-npm=${NODEJS_VERSION} && \
+    apk add --no-cache nodejs=${NODEJS_VERSION} npm=${NPM_VERSION} && \
     npm install -g prettier@${PRETTIER_VERSION} && \
-    npm cache clean --force && \
-    apk del nodejs-npm
+    npm cache clean --force
 
 WORKDIR /work
-ENTRYPOINT ["/usr/bin/prettier"]
+ENTRYPOINT ["/usr/bin/npx", "prettier"]
 CMD ["--help"]
